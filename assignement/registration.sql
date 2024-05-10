@@ -10,7 +10,7 @@ CREATE TABLE Registration(
 
 INSERT INTO Registration(clientNo, branchNo, staffNO, dateJoined)
 VALUES
-    ("CR76", "B005", "SL41", "2004-01-02"),
-    ("CR56", "B003", "SG37", "2003-04-11"),
-    ("CR74", "B003", "SG37", "2002-11-16"),
-    ("CR62", "B007", "SA9", "2003-03-07");
+    ('CR76', 'B005', 'SL41', '2004-01-02'),
+    ('CR56', 'B003', 'SG37', '2003-04-11'),
+    ('CR74', 'B003', 'SG37', '2002-11-16'),
+    ('CR62', 'B007', 'SA9', '2003-03-07');
