@@ -42,3 +42,13 @@
     WHERE s.branchNo = 'B003'
     GROUP BY s.StaffNo;
 ```
+
+## QUESTION 5
+```sql
+    CREATE VIEW Properties_MainStreet AS
+    SELECT p.propertyNo, p.street, p.city, p.postcode, p.type, p.rooms, p.rent, p.ownerNo, p.staffNO, p.branchNo
+    FROM propertyForRent p
+    JOIN Staff s ON p.staffNO = s.StaffNo
+    JOIN Branch b ON s.branchNo = b.BranchNo
+    WHERE b.street = '163 Main St';
+```
