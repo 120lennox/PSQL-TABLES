@@ -5,10 +5,10 @@
 
 ```sql
     CREATE VIEW House_Managers AS
-    SELECT s.staffNo, s.branchNo, COUNT(p.propertyNo) AS HousesManaged
+    SELECT s.staffno, s.branchno, COUNT(p.propertyNo) AS HousesManaged
     FROM Staff s
-    Join propertyForRent p ON  s.staffNo = p.staffNO
-    JOIN Branch b s.branchNo = b.BranchNo
+    Join propertyForRent p ON  s.staffno = p.staffno
+    JOIN Branch b s.branchno = b.Branchno
     WHERE s.position = 'Manager' AND p.type = 'House'
 ```
 
