@@ -32,4 +32,13 @@
     WHERE v.viewdate >= '2004-05-01' AND v.viewdate <= '2004-05-31';
 ```
 
+## QUESTION 4.
 
+```sql
+    CREATE VIEW Employee_1 AS
+    SELECT s.StaffNo, COUNT(p.propertyNo) AS NumOfPropertiesManaged
+    FROM Staff s
+    LEFT JOIN propertyForRent p ON s.StaffNo = p.staffNO
+    WHERE s.branchNo = 'B003'
+    GROUP BY s.StaffNo;
+```
