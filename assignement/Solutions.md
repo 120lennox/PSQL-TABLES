@@ -3,7 +3,7 @@
 
 ## Question 1.
 
-```
+```sql
     CREATE VIEW House_Managers AS
     s.staffNo, s.branchNo COUNT(p.propertyNo) AS HousesManaged
     FROM Staff s
