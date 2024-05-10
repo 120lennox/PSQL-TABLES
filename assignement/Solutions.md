@@ -22,3 +22,14 @@
     JOIN Branch b ON p.branchNo = b.branchNo
     WHERE v.viewdate > 'YYYY-03-31' AND v.viewdate < 'YYYY-06-01' AND b.branchNo = 'B003';
 ```
+
+## QUESTION 3.
+
+```sql
+    CREATE VIEW June_Viewings AS
+    SELECT DISTINCT v.propertyNo, v.viewdate
+    FROM Viewing v
+    WHERE v.viewdate >= '2004-05-01' AND v.viewdate <= '2004-05-31';
+```
+
+
