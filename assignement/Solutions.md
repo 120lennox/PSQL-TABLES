@@ -10,6 +10,7 @@
     Join propertyForRent p ON  s.staffno = p.staffno
     JOIN Branch b s.branchno = b.Branchno
     WHERE s.position = 'Manager' AND p.type = 'House'
+    GROUP BY s.staffNo, b.BranchNo;
 ```
 
 ## QUESTION 2.
