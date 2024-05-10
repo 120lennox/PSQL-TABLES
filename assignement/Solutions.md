@@ -5,12 +5,12 @@
 
 ```sql
     CREATE VIEW House_Managers AS
-    SELECT s.staffno, s.branchno, COUNT(p.propertyNo) AS HousesManaged
+    SELECT b.Branchno, s.Staffno, COUNT(p.propertyno) AS HousesManaged
     FROM Staff s
-    Join propertyForRent p ON  s.staffno = p.staffno
-    JOIN Branch b s.branchno = b.Branchno
+    JOIN propertyForRent p ON s.Staffno = p.staffno
+    JOIN Branch b ON s.branchno = b.Branchno
     WHERE s.position = 'Manager' AND p.type = 'House'
-    GROUP BY s.staffNo, b.BranchNo;
+    GROUP BY b.Branchno, s.Staffno;
 ```
 
 ## QUESTION 2.
@@ -21,7 +21,7 @@
     FROM Viewing v
     JOIN propertyForRent p ON v.propertyNo = p.propertyNo
     JOIN Branch b ON p.branchNo = b.branchNo
-    WHERE v.viewdate > 'YYYY-03-31' AND v.viewdate < 'YYYY-06-01' AND b.branchNo = 'B003';
+    WHERE v.viewdate > '2004-03-31' AND v.viewdate < '2004-06-01' AND b.branchNo = 'B003';
 ```
 
 ## QUESTION 3.
@@ -37,20 +37,20 @@
 
 ```sql
     CREATE VIEW Employee_1 AS
-    SELECT s.StaffNo, COUNT(p.propertyNo) AS NumOfPropertiesManaged
+    SELECT s.Staffno, COUNT(p.propertyno) AS NumOfPropertiesManaged
     FROM Staff s
-    LEFT JOIN propertyForRent p ON s.StaffNo = p.staffNO
-    WHERE s.branchNo = 'B003'
-    GROUP BY s.StaffNo;
+    LEFT JOIN propertyForRent p ON s.Staffno = p.staffnO
+    WHERE s.branchno = 'B003'
+    GROUP BY s.Staffno;
 ```
 
 ## QUESTION 5
 ```sql
     CREATE VIEW Properties_MainStreet AS
-    SELECT p.propertyNo, p.street, p.city, p.postcode, p.type, p.rooms, p.rent, p.ownerNo, p.staffNO, p.branchNo
+    SELECT p.propertyno, p.street, p.city, p.postcode, p.type, p.rooms, p.rent, p.ownerno, p.staffno, p.branchno
     FROM propertyForRent p
-    JOIN Staff s ON p.staffNO = s.StaffNo
-    JOIN Branch b ON s.branchNo = b.BranchNo
+    JOIN Staff s ON p.staffnO = s.Staffno
+    JOIN Branch b ON s.branchno = b.Branchno
     WHERE b.street = '163 Main St';
 ```
 
