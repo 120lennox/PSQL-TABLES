@@ -6,6 +6,7 @@ CREATE TABLE Viewing(
     viewdate DATE,
     comment VARCHAR(20),
     PRIMARY KEY (clientNo, propertyNo),
+    FOREIGN KEY(clientNo) REFERENCES Client(clientNo),
     FOREIGN KEY(propertyNo) REFERENCES propertyForRent(propertyNo)
 );
 
