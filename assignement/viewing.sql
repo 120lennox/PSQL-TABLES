@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS Viewing;
+
 CREATE TABLE Viewing(
     clientNo VARCHAR(5),
     propertyNo VARCHAR(6),
