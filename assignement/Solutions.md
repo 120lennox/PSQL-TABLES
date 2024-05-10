@@ -52,3 +52,15 @@
     JOIN Branch b ON s.branchNo = b.BranchNo
     WHERE b.street = '163 Main St';
 ```
+
+## QUESTION 6
+
+```sql
+    CREATE VIEW Property_or_Branch_office AS
+    SELECT DISTINCT City
+    FROM (
+        SELECT City FROM Branch
+        UNION
+        SELECT DISTINCT city FROM propertyForRent
+    ) AS CombinedData;
+```
